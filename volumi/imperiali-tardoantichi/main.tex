@@ -1,0 +1,38 @@
+% Sorgente comune a stampa.tex e completa.tex.
+% Compilare attraverso ./compila.sh, non direttamente.
+\documentclass[
+  11pt,
+  paper=a4,
+  oneside,
+  open=any,
+  headings=normal,
+  DIV=12,
+  BCOR=0mm,
+  numbers=noenddot
+]{scrbook}
+\input{../../comuni/latex/stile.tex}
+\input{metadata.tex}
+
+\begin{document}
+\ifnum\VersioneCompleta=1
+  \input{../../comuni/latex/copertina.tex}
+\fi
+\frontmatter
+\input{../../comuni/latex/frontespizio.tex}
+\tableofcontents
+
+\mainmatter
+\input{parti/01-tradizioni-imperiali/parte.tex}
+\input{parti/02-plotino/parte.tex}
+\input{parti/03-dopo-plotino/parte.tex}
+\input{parti/04-scuola-atene/parte.tex}
+\input{parti/05-alessandria-ultimo-neoplatonismo/parte.tex}
+
+\backmatter
+% In seguito: fonti antiche, bibliografia e indici analitici.
+\ifnum\VersioneCompleta=1
+  \IfFileExists{copertina/quarta.pdf}{%
+    \includepdf[pages=1,fitpaper=true,pagecommand={}]{copertina/quarta.pdf}%
+  }{}
+\fi
+\end{document}

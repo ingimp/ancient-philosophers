@@ -1,0 +1,19 @@
+% Utilizzato solo dall'edizione completa, prima del frontespizio interno.
+% Un eventuale PDF esterno deve essere A4 verticale, una pagina.
+\IfFileExists{copertina/prima.pdf}{%
+  \includepdf[pages=1,fitpaper=true,pagecommand={}]{copertina/prima.pdf}%
+}{%
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \centering
+    \vspace*{\fill}
+    {\LARGE\bfseries I filosofi dell'antichità\par}
+    \vspace{1.2cm}
+    {\Large Volume \NumeroVolume\par}
+    \vspace{0.35cm}
+    {\large \TitoloVolume\par}
+    \vspace*{\fill}
+    {\small\itshape Copertina provvisoria -- progettazione grafica da definire\par}
+    \vspace{1.5cm}
+  \end{titlepage}
+}

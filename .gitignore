@@ -1,0 +1,31 @@
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Aux LaTeX confinati in build/, anche se latexmk viene chiamato per errore altrove
+/volumi/*/build/*
+!/volumi/*/build/.gitkeep
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+*.nav
+*.snm
+
+# Output compilati: pubblicazione preferita via GitHub Releases
+/volumi/*/dist/stampa/*.pdf
+/volumi/*/dist/completa/*.pdf
