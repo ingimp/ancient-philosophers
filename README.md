@@ -5,6 +5,8 @@ Repository LaTeX di un'opera in due volumi, destinata agli studenti universitari
 - **Volume I** — *Dalle origini all'età ellenistica* (struttura ispirata al percorso didattico di Lidia Palumbo).
 - **Volume II** — *Dall'età imperiale alla tarda antichità* (struttura ispirata al percorso didattico di Anna Motta).
 
+**Criteri redazionali e citazioni:** [CRITERI_EDITORIALI.md](CRITERI_EDITORIALI.md) — protocollo vincolante per fonti, attribuzioni, parafrasi, citazioni e diritto d'autore.
+
 Il volume I termina con le filosofie ellenistiche: **Plotino** appartiene esclusivamente al volume II. I testi delle autrici sono riferimenti per l'ordinamento, non materiale riprodotto nel repository.
 
 ## Stato del progetto
