@@ -22,7 +22,7 @@ pulisci() {
 }
 
 compila() {
-  local edizione="$1" aux destinazione ingresso
+  local edizione="$1" aux destinazione ingresso pdf
   command -v latexmk >/dev/null || { echo 'Manca latexmk (TeX Live/MacTeX).' >&2; exit 127; }
   command -v lualatex >/dev/null || { echo 'Manca lualatex (TeX Live/MacTeX).' >&2; exit 127; }
   aux="$volume_dir/build/$edizione"
@@ -36,8 +36,15 @@ compila() {
       -outdir="$aux" "$ingresso"
   )
   [[ -s "$aux/$edizione.pdf" ]] || { echo "PDF non prodotto: $aux/$edizione.pdf" >&2; exit 1; }
-  cp "$aux/$edizione.pdf" "$destinazione/${base_pdf}_${edizione}.pdf"
-  echo "==> Creato: $destinazione/${base_pdf}_${edizione}.pdf"
+  pdf="$destinazione/${base_pdf}_${edizione}.pdf"
+  cp "$aux/$edizione.pdf" "$pdf"
+  echo "==> Creato: $pdf"
+  if [[ "$(uname -s)" == "Darwin" && "${OPEN_PDF:-1}" != "0" ]]; then
+    echo "==> Apro: $pdf"
+    if ! open "$pdf"; then
+      echo "Avviso: impossibile aprire automaticamente il PDF: $pdf" >&2
+    fi
+  fi
 }
 
 case "$azione" in

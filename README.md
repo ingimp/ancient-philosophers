@@ -52,6 +52,8 @@ cd volumi/imperiali-tardoantichi
 ./compila.sh completa
 ```
 
+Su **macOS**, dopo ogni compilazione riuscita viene aperto automaticamente il PDF generato nell'app predefinita (di norma Anteprima). Per compilare **senza** aprire il PDF, usa ad esempio `OPEN_PDF=0 make antichi-stampa`. Il comportamento è condiviso da entrambi i volumi e dalle edizioni `stampa` e `completa`; su altri sistemi il PDF viene soltanto generato in `dist/`.
+
 Dalla radice: `make tutti` compila tutti e quattro i PDF. `make pulisci` rimuove i file temporanei di entrambi i libri **senza cancellare `dist`**. `make pulisci-dist` rimuove anche i PDF distribuiti.
 
 ## Due edizioni indipendenti
