@@ -11,6 +11,16 @@
   numbers=noenddot
 ]{scrbook}
 \input{../../comuni/latex/stile.tex}
+% Bibliografia strutturata; il repertorio di ciascun capitolo include solo le opere citate.
+\usepackage[
+  backend=biber,
+  style=authoryear,
+  sorting=nyt,
+  giveninits=true,
+  uniquename=init,
+  refsection=chapter
+]{biblatex}
+\addbibresource{bibliografia/riferimenti.bib}
 \input{metadata.tex}
 
 \begin{document}
