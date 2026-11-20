@@ -20,3 +20,20 @@
 \clubpenalty=10000
 \widowpenalty=10000
 \displaywidowpenalty=10000
+
+
+% Testimonianze antiche: intestazione sobria, testo senza riquadri,
+% numerazione per capitolo ed etichette richiamabili con \ref.
+\newcounter{testimonianza}[chapter]
+\renewcommand{\thetestimonianza}{\thechapter.\arabic{testimonianza}}
+\newenvironment{testimonianza}[2]{%
+  \par\medskip
+  \refstepcounter{testimonianza}%
+  \noindent{\small\bfseries Testimonianza \thetestimonianza\enspace---\enspace #1\par}%
+  \label{#2}%
+  \smallskip
+  \begingroup\small\itshape\noindent\ignorespaces
+}{%
+  \par\endgroup
+  \smallskip\ignorespacesafterend
+}
